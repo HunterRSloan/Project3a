@@ -1,0 +1,47 @@
+# Io program for a two-dimensional list
+# Author: Your Name
+# Date: February 2, 2024
+# Source: URL to helpful or copied sources
+
+# Function to create a two-dimensional list
+dim := method(x, y,
+    list := List clone
+    for(i, 0, x - 1, 
+        list append(List clone repeat(y, 0))
+    )
+    list
+)
+
+# Function to set a value in the two-dimensional list
+set := method(x, y, value,
+    list at(x) at(y) = value
+)
+
+# Function to get a value from the two-dimensional list
+get := method(x, y,
+    list at(x) at(y)
+)
+
+# Function to transpose the two-dimensional list
+transpose := method(
+    newMatrix := dim(y size, x size)
+    for(i, 0, x size - 1,
+        for(j, 0, y size - 1,
+            newMatrix set(j, i, list get(i) get(j))
+        )
+    )
+    newMatrix
+)
+
+# Initializing and displaying a 3x4 list with random non-zero integers
+matrix := dim(3, 4)
+for(i, 0, 2,
+    for(j, 0, 3,
+        value := (1 to(100)) atRandom
+        matrix set(i, j, value)
+    )
+)
+matrix println
+
+# Displaying the transpose of the list
+(matrix transpose) println
