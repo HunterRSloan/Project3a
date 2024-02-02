@@ -1,0 +1,34 @@
+# Creating an object called Person
+Person := Object clone
+
+# Creating a slot for the object called name
+Person name := nil
+
+# Creating an instance of Person using your first name as the instance name
+John := Person clone
+
+# Setting the instance's name slot to your first and last name
+John name = "John Doe"
+
+# Displaying your name
+John name println
+
+# Sorting and displaying your name's characters in alphabetical order
+sortedName := John name asList sort join
+sortedName println
+
+# Reversing and displaying your name
+John name reverse println
+
+# Sorting and displaying your name in reverse alphabetical order
+reverseSortedName := John name asList sort reverse join
+reverseSortedName println
+
+#iolanguage.org
+
+→
+John Doe
+ DJehnoo
+eoD nhoJ
+oonheJD 
+oonheJD 
